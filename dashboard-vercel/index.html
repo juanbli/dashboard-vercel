@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Productos - Análisis por Proveedor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .dashboard-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .powerbi-iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 25px;
+            color: white;
+            padding: 20px;
+        }
+
+        .footer a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .powerbi-iframe {
+                height: 600px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Dashboard de Productos</h1>
+            <p>Análisis completo de productos por proveedor - Power BI + Vercel</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>🎯 29 Proveedores</h3>
+                    <p>Total de proveedores únicos</p>
+                </div>
+                <div class="feature">
+                    <h3>📦 77 Productos</h3>
+                    <p>Inventario completo</p>
+                </div>
+                <div class="feature">
+                    <h3>💰 $263.50</h3>
+                    <p>Producto más caro</p>
+                </div>
+                <div class="feature">
+                    <h3>⚡ Tiempo Real</h3>
+                    <p>Datos actualizados</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <!-- ✅ AQUÍ VA TU CÓDIGO EMBEBIDO -->
+            <iframe 
+                class="powerbi-iframe"
+                src="https://app.powerbi.com/reportEmbed?reportId=ebcdffba-8f00-4dbe-b3bf-647d519c0ba3&autoAuth=true&ctid=4bf38ea2-832d-4552-b508-421570da43ff&actionBarEnabled=true&reportCopilotInEmbed=true"
+                frameborder="0"
+                allowFullScreen="true">
+            </iframe>
+        </div>
+
+        <div class="footer">
+            <p>Dashboard creado con ❤️ usando Power BI y desplegado en Vercel</p>
+            <p>📧 Datos en tiempo real | 🔄 Actualización automática | 📱 Responsive</p>
+        </div>
+    </div>
+
+    <script>
+        // Efectos interactivos simples
+        document.addEventListener('DOMContentLoaded', function() {
+            const features = document.querySelectorAll('.feature');
+            
+            features.forEach(feature => {
+                feature.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                feature.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
